@@ -8,49 +8,59 @@ export default function Sessao() {
   const [personagens, setPersonagens] = useState('');
   const [anotacoes, setAnotacoes] = useState('');
 
+
+
   return (
     <SafeAreaView style={styles.containerGeral}>
-      <ScrollView contentContainerStyle={styles.abaContainer}>
-        <Texto style={styles.tituloSecao}>Sessão Atual</Texto>
-        
-        <View style={styles.cardSessao}>
-          <Texto style={styles.label}>Título da Sessão:</Texto>
-          <TextInput 
-            style={styles.input} 
-            value={titulo} 
-            onChangeText={setTitulo} 
-            placeholder="Ex: Invasão à Cidadela"
-          />
+      <ScrollView contentContainerStyle={styles.scrollContainer}>
+        <View style={styles.abaContainer}>
+          <Texto style={styles.tituloSecao}>SESSÃO ATUAL</Texto>
           
-          <Texto style={styles.label}>Personagens Presentes:</Texto>
-          <TextInput 
-            style={styles.inputArea} 
-            value={personagens} 
-            onChangeText={setPersonagens} 
-            multiline 
-            numberOfLines={2} 
-            placeholder="Nome dos PCs e NPCs importantes..."
-          />
 
-          <Texto style={styles.label}>História / Acontecimentos:</Texto>
-          <TextInput 
-            style={styles.inputArea} 
-            value={historia} 
-            onChangeText={setHistoria} 
-            multiline 
-            numberOfLines={5} 
-            placeholder="O que está acontecendo agora?"
-          />
 
-          <Texto style={styles.label}>Anotações Secretas (Mestre):</Texto>
-          <TextInput 
-            style={styles.inputArea} 
-            value={anotacoes} 
-            onChangeText={setAnotacoes} 
-            multiline 
-            numberOfLines={4} 
-            placeholder="Lembretes, PV dos inimigos, armadilhas..."
-          />
+          <View style={styles.cardSessao}>
+            <Texto style={styles.label}>TÍTULO DA SESSÃO:</Texto>
+            <TextInput 
+              style={styles.input} 
+              value={titulo} 
+              onChangeText={setTitulo} 
+              placeholder="Nome da sessão..."
+              placeholderTextColor="#ffffff34"
+            />
+            
+            <Texto style={styles.label}>PERSONAGENS:</Texto>
+            <TextInput 
+              style={styles.inputArea} 
+              value={personagens} 
+              onChangeText={setPersonagens} 
+              multiline 
+              numberOfLines={2} 
+              placeholder="Personagens presentes na sessão..."
+              placeholderTextColor="#ffffff34"
+            />
+
+            <Texto style={styles.label}>HISTÓRIA DA SESSÃO:</Texto>
+            <TextInput 
+              style={styles.inputArea} 
+              value={historia} 
+              onChangeText={setHistoria} 
+              multiline 
+              numberOfLines={5} 
+              placeholder="Descreva o andamento da sessão..."
+              placeholderTextColor="#ffffff34"
+            />
+
+            <Texto style={styles.label}>ANOTAÇÕES:</Texto>
+            <TextInput 
+              style={styles.inputArea} 
+              value={anotacoes} 
+              onChangeText={setAnotacoes} 
+              multiline 
+              numberOfLines={4} 
+              placeholder="Senhas, status de inimigos..."
+              placeholderTextColor="#ffffff34"
+            />
+          </View>
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -58,11 +68,15 @@ export default function Sessao() {
 }
 
 const styles = StyleSheet.create({
-  containerGeral: { flex: 1, backgroundColor: '#f0f0f5' },
-  abaContainer: { padding: 20 },
-  tituloSecao: { fontSize: 22, fontWeight: 'bold', color: '#c8102e', marginBottom: 20, textAlign: 'center' },
-  cardSessao: { backgroundColor: '#fff', padding: 20, borderRadius: 12, elevation: 3 },
-  label: { fontSize: 14, fontWeight: '600', marginBottom: 5, marginTop: 10 },
-  input: { backgroundColor: '#f9f9f9', borderWidth: 1, borderColor: '#ddd', borderRadius: 8, padding: 12, fontSize: 16, color: '#333' },
-  inputArea: { backgroundColor: '#f9f9f9', borderWidth: 1, borderColor: '#ddd', borderRadius: 8, padding: 12, fontSize: 16, textAlignVertical: 'top' },
+  containerGeral: { flex: 1, backgroundColor: '#1a1a1a' },
+  scrollContainer: { flexGrow: 1 },
+  abaContainer: { padding: 25, width: '100%', maxWidth: 600, alignSelf: 'center', paddingTop: 40 },
+  tituloSecao: { fontSize: 24, fontWeight: '900', color: '#bbff00', marginBottom: 25, textAlign: 'center', letterSpacing: 4 },
+  
+
+
+  cardSessao: { backgroundColor: '#2e2e2e', padding: 20, borderRadius: 12, borderWidth: 1, borderColor: '#3dbd70' },
+  label: { fontSize: 11, fontWeight: '700', marginBottom: 8, marginTop: 15, color: '#3dbd70', letterSpacing: 2 },
+  input: { backgroundColor: '#1a1a1a', borderWidth: 1, borderColor: '#3dbd70', borderRadius: 8, padding: 15, fontSize: 16, color: '#fff' },
+  inputArea: { backgroundColor: '#1a1a1a', borderWidth: 1, borderColor: '#3dbd70', borderRadius: 8, padding: 15, fontSize: 16, color: '#fff', textAlignVertical: 'top' },
 });
