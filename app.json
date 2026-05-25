@@ -25,6 +25,16 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-font",
+      "expo-video",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "TavernaDaFicha precisa da câmera para registrar o avatar do seu agente."
+        }
+      ]
+    ]
   }
 }
